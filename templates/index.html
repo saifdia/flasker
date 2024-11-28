@@ -1,0 +1,30 @@
+<h1>This is my first webpage</h1>
+
+<P>Hello my name {{ name }}</P>
+
+<p>Is not this cool</p>
+
+<p> {{ stuff | safe }}</p>
+<p> {{ stuff2 | striptags }}</p>
+
+<h3>Favorite Pizza:</h3>
+{% for pizza in favorite_pizza %}
+    {% if pizza=='Reine' %}
+        {{ pizza | wordcount }}
+    {% else %}
+        <p>
+            <li>{{ pizza }}</li>
+        </p>
+    {% endif %}
+{% endfor %}
+
+<h3>Reverse Favorite Pizza:</h3>
+{% for pizza in favorite_pizza %}
+    {% if pizza=='Reine' %}
+        {{ pizza | reverse }}
+    {% else %}
+        <p>
+            <li>{{ pizza | reverse }}</li>
+        </p>
+    {% endif %}
+{% endfor %}
